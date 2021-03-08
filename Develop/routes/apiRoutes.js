@@ -1,41 +1,6 @@
+//setting constants, requiring fs and uuid module
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
-
-// module.exports = (app) => {
-//     fs.readFile('./db/db.json', 'utf8', (err, data) => {
-//         if (err) throw err;
-//         var notes = JSON.parse(data);
-
-//         app.get('api/notes', (req, res) => {
-//             res.json(notes);
-//         });
-
-//         app.post('api/notes', (req, res) => {
-//             let newNote = req.body;
-//             newNote.id = uuidv4();
-//             notes.push(newNote);
-//             updateNotes();
-//             return console.log("added new note: " + newNote.title);
-//         });
-
-//         app.get('api/notes/:id', (req, res) => {
-//             res.json(notes[req.params.id]);
-//         });
-
-//         app.delete('api/notes/:id', (req, res) => {
-//             notes.splice(req.params.id, 1);
-//             updateNotes();
-//             console.log('deleted note with id' + req.params.id);
-//         });
-
-//         function updateNotes() {
-//             fs.writeFile("./db/db.json",JSON.stringify(notes,'\t'),err => {
-//                 if (err) throw err;
-//                 return true;
-//             });
-//         }
-//     });
-// }
 
 module.exports = (app) => {
     // get and display the notes page
@@ -46,7 +11,7 @@ module.exports = (app) => {
         });
     });
 
-    // posting new notes to the notes page
+    // posting new notes to the notes page, setting an ID using the uuid module
     app.post("/api/notes", (req, res) => {
         let notesTaken = req.body;
         notesTaken.id = uuidv4();
@@ -61,7 +26,7 @@ module.exports = (app) => {
         });
     });
 
-    //deleting notes page
+    //deleting notes page using ids
     app.delete("/api/notes/:id", (req, res) => {
         const id = req.params.id;
         fs.readFile('./db/db.json', (err, data) => {
