@@ -6,6 +6,8 @@ An app for writing and saving notes. This app uses Express.js to save, retrieve,
 
 On the right of the app, users can add a title and body of their note. When they click the save icon, the notes are saved on the left. Users can access old notes by clicking the title of the note. Clicking the trashcan icon deletes the saved notes. 
 
+You can access this app on heroko here: https://sleepy-reaches-62870.herokuapp.com/
+
 Here is a screenshot of the note taker: 
 <img src="images/screenshot.jpg" alt="screenshot of notetake app example">
 
