@@ -9,7 +9,7 @@ On the right of the app, users can add a title and body of their note. When they
 You can access this app on heroko here: https://sleepy-reaches-62870.herokuapp.com/
 
 Here is a screenshot of the note taker: 
-<img src="images/screenshot.jpg" alt="screenshot of notetake app example">
+<img src="./Develop/images/screenshot.jpg" alt="screenshot of notetake app example">
 
 ## Table of Contents
 * [Installation](#installation)
